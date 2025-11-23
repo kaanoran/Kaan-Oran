@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WetWipe Pro Sipariş</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#0ea5e9', // Sky blue for hygiene/cleanliness
+              secondary: '#64748b',
+              accent: '#38bdf8',
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0"
+  }
+}
+</script>
+<style>
+  @media print {
+    /* 1. Reset Global Page Settings */
+    @page {
+      size: A4;
+      margin: 10mm;
+    }
+    
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+    }
+
+    /* 2. Hide Everything by Default */
+    body * {
+      visibility: hidden;
+    }
+
+    /* 3. Make Specific Print Container Visible */
+    #printable-overlay, #printable-overlay * {
+      visibility: visible !important;
+    }
+
+    /* 4. Force Absolute Positioning to Break Fixed/Flex Modals */
+    #printable-overlay {
+      position: absolute !important;
+      left: 0 !important;
+      top: 0 !important;
+      width: 100% !important;
+      height: auto !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      background-color: white !important;
+      z-index: 9999 !important;
+      display: block !important; /* Override flex */
+      inset: auto !important;
+      overflow: visible !important;
+    }
+
+    /* 5. Ensure Inner Content Expands Fully */
+    #printable-section {
+      width: 100% !important;
+      height: auto !important;
+      max-height: none !important;
+      overflow: visible !important;
+      box-shadow: none !important;
+      border: none !important;
+      display: block !important;
+    }
+
+    /* 6. Kill Scrollbars on Print */
+    .overflow-y-auto, .overflow-x-auto, .overflow-hidden {
+      overflow: visible !important;
+      height: auto !important;
+      max-height: none !important;
+    }
+
+    /* 7. Hide specific elements marked to be hidden in print */
+    .print\:hidden {
+      display: none !important;
+    }
+  }
+</style>
+</head>
+  <body class="bg-slate-50 text-slate-900 font-sans antialiased">
+    <div id="root"></div>
+  </body>
+</html>
